@@ -1,0 +1,9 @@
+
+.questionWrapper{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-left: 60px;
+    margin-right: 60px;
+    justify-content: center;
+}
