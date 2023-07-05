@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Login.module.css";
+import styles from "./style.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
 
@@ -11,11 +11,15 @@ const LogIn = () => {
   
       const login = async () => {
   try {  
+        console.log(email);
+        console.log(password);
         const response = await axios.post("http://localhost:8081/logIn", {
           email: email,
           password: password,
         });
-  
+        console.log(response);
+        
+        
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("UserId", response.data.id);
   
