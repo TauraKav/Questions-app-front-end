@@ -3,7 +3,7 @@ import axios from "axios";
 import questionCard from "../components/questionCard/QuestionCard";
 import styles from "./styles.module.css";
 import QuestionCard from "../components/questionCard/QuestionCard";
-// import Navbar from "../components/navbar/Navbar";
+import Navbar from "../components/navbar/Navbar";
 // import Footer from "../components/footer/Footer";
 
 const QuestionsPage = ({ allQuestions }) => {
@@ -12,7 +12,11 @@ const QuestionsPage = ({ allQuestions }) => {
   return (
     <>
     
-      {/* <Navbar/> */}
+      <Navbar/>
+    <div className={styles.firstLineWrapper}> 
+    <h1>Visi klausimai</h1>
+    <a  className={styles.newQuestion} href="/newQuestion">Užduoti klausimą</a>
+    </div>
 
       <div className={styles.questionsWrapper}>
         <div className={styles.questionWrapper}>

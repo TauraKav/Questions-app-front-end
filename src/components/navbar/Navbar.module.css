@@ -1,0 +1,64 @@
+.navbarWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    height: 80px;
+    width: 100%;
+    background-color: rgb(226, 243, 105);
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+}
+
+.logoWrapper {
+    display: flex;
+}
+
+.logoWrapper h1 {
+    margin: 0;
+    align-self: flex-end;
+    font-size: 20px;
+    color: rgba(147, 61, 61, 0.983);
+
+}
+
+.logoImg {
+    align-self: center;
+    height: 70px;
+    width: 120px;
+    object-fit: cover;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding-left: 0px;
+}
+
+.menu li a {
+    color: rgba(147, 61, 61, 0.983);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    font-size: 22px;
+}
+
+
+@media (max-width: 720px) {
+    .menu li a {
+        font-size: 15px;
+    }
+
+    .menu {
+       flex-direction: column;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .logoWrapper h1 {
+        font-size:15px;
+    }
+}
