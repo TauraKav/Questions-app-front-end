@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./styles.module.css";
 import axios from "axios";
 import { useRouter } from 'next/router';
+import Navbar from "../../components/navbar/Navbar";
 
 
 const SignUp = () => {
@@ -30,6 +31,7 @@ if (response.status === 200) {
 
   return (
     <>
+    <Navbar/>
       <h1 className={styles.title}>User registration</h1>
 
       <div className={styles.form}>

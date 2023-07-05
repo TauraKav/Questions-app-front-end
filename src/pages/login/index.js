@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./style.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
+import Navbar from "../../components/navbar/Navbar";
 
 const LogIn = () => {
     const router = useRouter();
@@ -27,6 +28,7 @@ const LogIn = () => {
   
     return (
       <>  
+      <Navbar />
       <div className={styles.form}> 
   <h3>LogIn</h3>
   
