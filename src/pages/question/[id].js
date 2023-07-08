@@ -47,7 +47,17 @@ const questionPage = () => {
                 id={questionId}
                 text={text}
             />
-            <h1 className={styles.answersTitle}> Atsakymai:</h1>
+            <div className={styles.answerTextArea}>
+                <h2 className={styles.addAnswerTitle}> Jūsų atsakymas</h2>
+                < textarea
+                    className={styles.answerTextInput}
+                    name="text"
+                    placeholder="Rašykite savo atsakymą čia"
+                />
+                <button className={styles.answerButton}>Pridėti atsakymą</button>
+            </div>
+
+            <h2 className={styles.answersTitle}> Atsakymai:</h2>
             {answers && answers.map((answer, index) => (
                 <div key={answer.id}>
                     <div className={styles.answerNumber}>{index + 1}.</div>

@@ -1,9 +1,46 @@
 .answerNumber,
-.answersTitle {
+.answersTitle,
+.addAnswerTitle {
     margin-top: 20px;
     margin-left: 30px;
 }
 
 .answerNumber {
     font-size: 18px;
+}
+
+.answerTextArea {
+    display: flex;
+    flex-direction: column;
+}
+
+.answerTextInput {
+    width: 50%;
+    min-height: 150px;
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: vertical;
+    align-self: center;
+}
+
+.addAnswerTitle {
+    width: 50%;
+    align-self: center;
+}
+
+.answerButton {
+    color: black;
+    font-size: 14px;
+    border: solid 2px black;
+    align-self: end;
+    padding: 12px;
+    border-radius: 20px;
+    background-color: rgb(226, 243, 105);
+    cursor: pointer;
+    position: relative;
+    right: 400px;
+    margin-top: 15px;
+
 }
