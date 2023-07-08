@@ -1,0 +1,9 @@
+.answerWrapper {
+    border-bottom: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+
+}

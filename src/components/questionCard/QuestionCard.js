@@ -20,9 +20,16 @@ const QuestionCard = ({ title, id, text }) => {
 
             if (response.status === 200) {
                 setSuccess(true);
-                setTimeout(() => {
-                    router.reload();
-                }, 1000);
+                if (router.asPath == "/") {
+                    setTimeout(() => {
+                        router.reload();
+                    }, 1000);
+                }
+                else {
+                    setTimeout(() => {
+                        router.push("/");
+                    }, 1000);
+                }
             }
         } catch (err) {
             console.log(err);
