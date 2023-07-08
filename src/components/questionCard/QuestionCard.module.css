@@ -1,4 +1,4 @@
-.questionWrapper{
+.questionWrapper {
     background-color: rgb(251, 243, 232);
     min-width: 400px;
     min-height: 180px;
@@ -6,44 +6,64 @@
     border-radius: 6px;
     display: flex;
     flex-direction: column;
-   justify-content: center;
+    justify-content: center;
     gap: 20px;
     transition: 0.3s;
     border: 2px, solid, black;
 }
 
-.questionWrapper:hover{
-    background-color: rgb(244, 228, 206);
-}
-
-.title {
-    margin:0px;
-}
-
-.link{
+.link {
     text-decoration: none;
     color: rgb(14, 15, 15);
 }
 
-.text{
-    font-size: 17px;
+.questionWrapper:hover {
+    background-color: rgb(244, 228, 206);
 }
 
+.title {
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.text {
+    font-size: 19px;
+}
+
+.deleteButton {
+    cursor: pointer;
+    padding: 0px;
+    align-self: end;
+    padding: 3px;
+}
+
+.trashImg {
+    object-fit: cover;
+    width: 100%;
+}
+
+.message {
+    color: rgb(217, 41, 41);
+
+}
 
 @media (max-width: 720px) {
     .card {
         width: 300px;
-        min-height: 300px; 
+        min-height: 300px;
     }
 
     .destination {
         font-size: 20px;
     }
+
     .image {
         height: 200px;
     }
 
-    .date, .duration, .price {
+    .date,
+    .duration,
+    .price {
         font-size: 15px;
     }
 

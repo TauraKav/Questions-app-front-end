@@ -1,0 +1,36 @@
+.questionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.titleInput {
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.textInput {
+    width: 50%;
+    min-height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: vertical;
+}
+
+.addButton {
+    color: black;
+    font-size: 14px;
+    border: solid 2px black;
+    align-self: center;
+    padding: 12px;
+    border-radius: 20px;
+    background-color: rgb(226, 243, 105);
+    cursor: pointer;
+}

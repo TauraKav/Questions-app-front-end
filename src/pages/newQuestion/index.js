@@ -15,15 +15,17 @@ const NewQuestionPage = () => {
 
     const addNewQuestion = async () => {
         try {
-            setUserId (localStorage.getItem("UserId"));
+            setUserId(localStorage.getItem("UserId"));
             const response = await axios.post("http://localhost:8081/question", {
                 title: title,
                 text: text,
                 id: userId,
-            }, {headers: {
-                authorization: localStorage.getItem("token")
-              }});
-              console.log(response.status);
+            }, {
+                headers: {
+                    authorization: localStorage.getItem("token")
+                }
+            });
+            console.log(response.status);
 
             if (response.status === 200) {
                 setSuccess(true);
@@ -43,20 +45,22 @@ const NewQuestionPage = () => {
         <div>
             <Navbar />
 
-            <div className={styles.tripForm}>
+            <div className={styles.questionForm}>
                 <input
+                    className={styles.titleInput}
                     value={title}
                     onChange={(event) => setTitle(event.target.value)}
                     placeholder="Title"
                 />
 
-                <input
-                    value={text}
+                < textarea
+                    className={styles.textInput}
+                    name="text"
                     onChange={(event) => setText(event.target.value)}
-                    placeholder="Text"
+                    placeholder="Write text here"
                 />
 
-                <button onClick={addNewQuestion}>Add a new question</button>
+                <button className={styles.addButton} onClick={addNewQuestion}>Add a new question</button>
 
                 {isSuccess && <div>Question was added successfully</div>}
             </div>
