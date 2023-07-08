@@ -22,3 +22,21 @@
 .text {
     font-size: 18px;
 }
+
+.likeButton {
+    width:34px;
+    cursor: pointer;
+    padding: 0px;
+    align-self: end;
+    padding: 3px;
+}
+
+.likeImg {
+    object-fit: cover;
+    width: 100%;
+}
+
+.likesNumber {
+    align-self: end;
+    font-size: 18px;
+}

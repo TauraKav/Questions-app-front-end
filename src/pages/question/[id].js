@@ -54,7 +54,7 @@ const questionPage = () => {
                     <AnswerCard
                         id={answer.id}
                         text={answer.text}
-                        likes={3} />
+                        likes={answer.gained_likes_number} />
                 </div>
             ))}
 

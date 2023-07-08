@@ -28,15 +28,55 @@ const AnswerCard = ({ likes, id, text }) => {
         }
     };
 
+    const likeAnswer = async () => {
+        await updateLike(1);
+    }
+
+    const dislikeAnswer = async () => {
+        await updateLike(-1);
+    }
+
+    const updateLike = async (like) => {
+        try {
+            const response = await axios.put(`http://localhost:8081/answer/${id}`,
+                {
+                    gained_likes: like
+                },
+                {
+                    headers: {
+                        authorization: localStorage.getItem("token")
+                    }
+                });
+
+            if (response.status === 200) {
+                setTimeout(() => {
+                    router.reload();
+                }, 1000);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     return (
         <>
             <div className={styles.answerWrapper}>
-                        <div className={styles.text}>{text}</div>
-                        <button className={styles.deleteButton} onClick={deleteAnswer}>
+                <div className={styles.text}>{text}</div>
+                <button className={styles.deleteButton} onClick={deleteAnswer}>
                     <img src={trash.src} className={styles.trashImg} />
                 </button>
-                    </div>
-                
+                <button className={styles.likeButton} onClick={likeAnswer}>
+                    <img src={like.src} className={styles.likeImg} />
+                </button>
+                <div className={styles.likesNumber}>{likes}</div>
+
+                <button className={styles.likeButton} onClick={dislikeAnswer}>
+                    <img src={dislike.src} className={styles.likeImg} />
+                </button>
+
+                <div> </div>
+            </div>
+
         </>
     );
 };
