@@ -1,9 +1,24 @@
 .answerWrapper {
-    border-bottom: solid 1px black;
+    border-bottom: solid 1px rgb(174, 170, 170);
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    padding: 30px;
+    padding: 10px 30px;
+}
 
+.deleteButton {
+    cursor: pointer;
+    padding: 0px;
+    align-self: end;
+    padding: 3px;
+}
+
+.trashImg {
+    object-fit: cover;
+    width: 100%;
+}
+
+.text {
+    font-size: 18px;
 }

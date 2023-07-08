@@ -47,9 +47,10 @@ const questionPage = () => {
                 id={questionId}
                 text={text}
             />
+            <h1 className={styles.answersTitle}> Atsakymai:</h1>
             {answers && answers.map((answer, index) => (
                 <div key={answer.id}>
-                    <div>{index + 1}.</div>
+                    <div className={styles.answerNumber}>{index + 1}.</div>
                     <AnswerCard
                         id={answer.id}
                         text={answer.text}

@@ -1,0 +1,9 @@
+.answerNumber,
+.answersTitle {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.answerNumber {
+    font-size: 18px;
+}
