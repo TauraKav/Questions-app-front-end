@@ -43,3 +43,31 @@
   margin-bottom: 40px;
   gap: 30px;
 }
+
+@media (max-width: 720px) {
+  .firstLineWrapper {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .sectionName {
+    text-align: center;
+  }
+
+  .filterButtonsWrapper {
+    flex-direction: column
+  }
+}
+
+@media (max-width: 580px) {
+  .sectionName {
+    font-size: 28px
+  }
+
+  .newQuestion,
+  .answeredQuestions,
+  .notAnsweredQuestions {
+    font-size: 12px;
+    padding: 7px;
+  }
+}

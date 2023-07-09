@@ -9,10 +9,6 @@
     margin-left: 30px;
 }
 
-.answerNumber {
-    font-size: 18px;
-}
-
 .answerTextArea {
     display: flex;
     flex-direction: column;
@@ -48,3 +44,27 @@
     margin-top: 15px;
 
 }
+
+@media (max-width: 950px) {
+    .answerButton {
+        position: static;
+        align-self: center;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .answerButton {
+        font-size:12px;
+        padding:5px;
+    }
+    .addAnswerTitle {
+        font-size:16px;
+        text-align: center;
+        margin-left:0px;
+    }
+
+    .answersTitle {
+        font-size:16px;
+    }
+
+  }

@@ -54,25 +54,30 @@
 
 }
 
-@media (max-width: 720px) {
-    .card {
-        width: 300px;
-        min-height: 300px;
+@media (max-width: 580px) {
+    .questionWrapper {
+        padding: 15px;
+        gap: 10px;
+        min-height: 130px;
+        min-width:250px;
     }
 
-    .destination {
-        font-size: 20px;
+    .cardWrapper {
+        display: flex;
+        flex-direction: column;
     }
 
-    .image {
-        height: 200px;
+    .deleteButton {
+        position: static;
+        align-self: flex-start;
+        width:25px;
     }
 
-    .date,
-    .duration,
-    .price {
-        font-size: 15px;
+    .title {
+        font-size: 20px
     }
 
-
+    .text {
+        font-size:14px;
+    }
 }
