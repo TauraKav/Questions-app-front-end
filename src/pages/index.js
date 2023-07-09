@@ -8,24 +8,47 @@ import Navbar from "../components/navbar/Navbar";
 
 const QuestionsPage = ({ allQuestions }) => {
   const [questions, setQuestions] = useState(allQuestions);
+  const [displayedQuestions, setDisplayedQuestions] =
+    useState(allQuestions);
 
   return (
     <>
-    
-      <Navbar/>
-    <div className={styles.firstLineWrapper}> 
-    <h1>Visi klausimai</h1>
-    <a  className={styles.newQuestion} href="/newQuestion">Užduoti klausimą</a>
-    </div>
+      <Navbar />
+
+      <div className={styles.firstLineWrapper}>
+        <h1 className={styles.sectionName}> Visi klausimai</h1>
+
+        <a className={styles.newQuestion} href="/newQuestion">Užduoti klausimą</a>
+      </div>
+
+      <div className={styles.filterButtonsWrapper}>
+        <button className={styles.answeredQuestions} onClick={() =>
+          setDisplayedQuestions(() =>
+            questions?.filter(
+              (question) => question.answers_ids.length > 0
+            )
+          )
+        }>Atsakyti klausimai</button>
+        <button className={styles.notAnsweredQuestions} onClick={() =>
+          setDisplayedQuestions(() =>
+            questions?.filter(
+              (question) => question.answers_ids.length == 0
+            )
+          )
+        }
+        >Neatsakyti klausimai</button>
+      </div>
+
 
       <div className={styles.questionsWrapper}>
         <div className={styles.questionWrapper}>
-          {questions && questions.map((question) => (
+          {displayedQuestions && displayedQuestions.map((question) => (
             <div key={question.id}>
               <QuestionCard
                 id={question.id}
                 title={question.title}
-                text={question.text} />
+                text={question.text}
+              />
             </div>
           ))}
         </div>
@@ -45,9 +68,9 @@ export async function getServerSideProps() {
 
     const { data } = response;
     const { questions } = data;
-
+   
     return { props: { allQuestions: questions } };
-    
+
   } catch (err) {
     console.log(err);
   }
