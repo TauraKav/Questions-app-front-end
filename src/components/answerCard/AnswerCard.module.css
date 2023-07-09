@@ -1,10 +1,18 @@
 .answerWrapper {
     border-bottom: solid 1px rgb(174, 170, 170);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: flex;  
+    justify-content: space-between;
     gap: 20px;
-    padding: 10px 30px;
+    padding: 20px 30px;
+}
+
+.textWrapper {
+    align-self: center;
+}
+
+.buttonsWrapper {
+    display: flex;
+    gap: 15px;
 }
 
 .deleteButton {
@@ -20,7 +28,12 @@
 }
 
 .text {
-    font-size: 18px;
+    margin-top:10px;
+    font-size: 20px;
+}
+
+.answerNumber {   
+    font-size: 20px;
 }
 
 .likeButton {

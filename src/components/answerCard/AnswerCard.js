@@ -6,7 +6,7 @@ import trash from "../../assets/trash.png";
 import dislike from "../../assets/dislike.png";
 import axios from "axios";
 
-const AnswerCard = ({ likes, id, text }) => {
+const AnswerCard = ({ likes, id, text, index }) => {
     const router = useRouter();
 
     const deleteAnswer = async () => {
@@ -61,20 +61,24 @@ const AnswerCard = ({ likes, id, text }) => {
     return (
         <>
             <div className={styles.answerWrapper}>
-                <div className={styles.text}>{text}</div>
-                <button className={styles.deleteButton} onClick={deleteAnswer}>
-                    <img src={trash.src} className={styles.trashImg} />
-                </button>
-                <button className={styles.likeButton} onClick={likeAnswer}>
-                    <img src={like.src} className={styles.likeImg} />
-                </button>
-                <div className={styles.likesNumber}>{likes}</div>
+                <div className={styles.textWrapper}>
+                    <div className={styles.answerNumber}>{index}.</div>
+                    <div className={styles.text}>{text}</div>
+                </div>
 
-                <button className={styles.likeButton} onClick={dislikeAnswer}>
-                    <img src={dislike.src} className={styles.likeImg} />
-                </button>
+                <div className={styles.buttonsWrapper}>
+                    <button className={styles.deleteButton} onClick={deleteAnswer}>
+                        <img src={trash.src} className={styles.trashImg} />
+                    </button>
+                    <button className={styles.likeButton} onClick={likeAnswer}>
+                        <img src={like.src} className={styles.likeImg} />
+                    </button>
+                    <div className={styles.likesNumber}>{likes} votes </div>
 
-                <div> </div>
+                    <button className={styles.likeButton} onClick={dislikeAnswer}>
+                        <img src={dislike.src} className={styles.likeImg} />
+                    </button>
+                </div>
             </div>
 
         </>

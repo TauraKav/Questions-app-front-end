@@ -10,7 +10,8 @@ import AnswerCard from "@/components/answerCard/AnswerCard";
 
 const questionPage = () => {
     const [title, setTitle] = useState();
-    const [text, setText] = useState();
+    const [questionText, setQuestionText] = useState();
+    const [answerText, setAnswerText] = useState();
     const [questionId, setQuestionId] = useState();
     const [answers, setAnswers] = useState();
     const router = useRouter();
@@ -25,7 +26,7 @@ const questionPage = () => {
             const { question } = data;
 
             setTitle(question[0].title);
-            setText(question[0].text);
+            setQuestionText(question[0].text);
             setQuestionId(question[0].id);
             setAnswers(question[0].answers);
 
@@ -39,39 +40,56 @@ const questionPage = () => {
     }, [router.query.id]
     )
 
+    const addNewAnswer = async () => {
+        try {
+            const response = await axios.post(`http://localhost:8081/question/${router.query.id}/answer`, {
+                text: answerText
+            }, {
+                headers: {
+                    authorization: localStorage.getItem("token")
+                }
+            });
+
+            if (response.status === 200) {
+                setTimeout(() => {
+                    router.reload();
+                }, 2000);
+            };
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return (
         <>
             <Navbar />
             <QuestionCard
                 title={title}
                 id={questionId}
-                text={text}
+                text={questionText}
             />
             <div className={styles.answerTextArea}>
                 <h2 className={styles.addAnswerTitle}> Jūsų atsakymas</h2>
                 < textarea
                     className={styles.answerTextInput}
                     name="text"
+                    onChange={(event) => setAnswerText(event.target.value)}
                     placeholder="Rašykite savo atsakymą čia"
                 />
-                <button className={styles.answerButton}>Pridėti atsakymą</button>
+                <button className={styles.answerButton} onClick={addNewAnswer}>Pridėti atsakymą</button>
             </div>
 
             <h2 className={styles.answersTitle}> Atsakymai:</h2>
             {answers && answers.map((answer, index) => (
                 <div key={answer.id}>
-                    <div className={styles.answerNumber}>{index + 1}.</div>
                     <AnswerCard
                         id={answer.id}
                         text={answer.text}
-                        likes={answer.gained_likes_number} />
+                        likes={answer.gained_likes_number} 
+                        index={index + 1} />
                 </div>
             ))}
-
-
-
         </>
-
     )
 }
 

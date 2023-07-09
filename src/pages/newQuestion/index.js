@@ -25,7 +25,6 @@ const NewQuestionPage = () => {
                     authorization: localStorage.getItem("token")
                 }
             });
-            console.log(response.status);
 
             if (response.status === 200) {
                 setSuccess(true);
