@@ -63,32 +63,36 @@ const questionPage = () => {
     return (
         <>
             <Navbar />
-            <QuestionCard
-                title={title}
-                id={questionId}
-                text={questionText}
-            />
-            <div className={styles.answerTextArea}>
-                <h2 className={styles.addAnswerTitle}> Jūsų atsakymas</h2>
-                < textarea
-                    className={styles.answerTextInput}
-                    name="text"
-                    onChange={(event) => setAnswerText(event.target.value)}
-                    placeholder="Rašykite savo atsakymą čia"
+            <div className={styles.pageWrapper}>
+                <QuestionCard
+                    title={title}
+                    id={questionId}
+                    text={questionText}
                 />
-                <button className={styles.answerButton} onClick={addNewAnswer}>Pridėti atsakymą</button>
+                <div className={styles.answerTextArea}>
+                    <h2 className={styles.addAnswerTitle}> Jūsų atsakymas</h2>
+                    < textarea
+                        className={styles.answerTextInput}
+                        name="text"
+                        onChange={(event) => setAnswerText(event.target.value)}
+                        placeholder="Rašykite savo atsakymą čia"
+                    />
+                    <button className={styles.answerButton} onClick={addNewAnswer}>Pridėti atsakymą</button>
+                </div>
+
+                <h2 className={styles.answersTitle}> Atsakymai:</h2>
+                {answers && answers.map((answer, index) => (
+                    <div key={answer.id}>
+                        <AnswerCard
+                            id={answer.id}
+                            text={answer.text}
+                            likes={answer.gained_likes_number}
+                            index={index + 1} />
+                    </div>
+                ))}
             </div>
 
-            <h2 className={styles.answersTitle}> Atsakymai:</h2>
-            {answers && answers.map((answer, index) => (
-                <div key={answer.id}>
-                    <AnswerCard
-                        id={answer.id}
-                        text={answer.text}
-                        likes={answer.gained_likes_number} 
-                        index={index + 1} />
-                </div>
-            ))}
+            <Footer />
         </>
     )
 }

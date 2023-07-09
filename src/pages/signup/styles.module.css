@@ -1,13 +1,16 @@
-.form{
-    display: flex;
-    flex-direction: column;
-    gap:20px;
-    align-items: center;
-    justify-content: center;
-
+.pageWrapper {
+    min-height: calc(100vh - 220px);
 }
 
-.form input{
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.form input {
     width: 60%;
     padding-left: 10px;
     padding-right: 10px;
@@ -15,11 +18,17 @@
     padding-bottom: 4px;
 }
 
-.title{
+.title {
     text-align: center;
 }
 
-.button{
-    padding: 6px;
-    
+.button {
+    color: black;
+    font-size: 14px;
+    border: solid 2px black;
+    align-self: center;
+    padding: 9px;
+    border-radius: 20px;
+    background-color: rgb(226, 243, 105);
+    cursor: pointer;
 }

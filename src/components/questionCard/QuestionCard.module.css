@@ -1,3 +1,7 @@
+.cardWrapper {
+    position: relative;
+}
+
 .questionWrapper {
     background-color: rgb(251, 243, 232);
     min-width: 400px;
@@ -35,6 +39,9 @@
     padding: 0px;
     align-self: end;
     padding: 3px;
+    position: absolute;
+    bottom: 20px;
+    right: 35px;
 }
 
 .trashImg {

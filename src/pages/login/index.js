@@ -3,54 +3,59 @@ import styles from "./style.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 
 const LogIn = () => {
-    const router = useRouter();
-  
-      const [email, setEmail] = useState("");
-      const [password, setPassword] = useState("");
-  
-      const login = async () => {
-  try {   
-        const response = await axios.post("http://localhost:8081/logIn", {
-          email: email,
-          password: password,
-        });
-  
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("UserId", response.data.id);
-  
-        router.push("/");
-  
-  } catch (err) {console.log("err", err)}
+  const router = useRouter();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const login = async () => {
+    try {
+      const response = await axios.post("http://localhost:8081/logIn", {
+        email: email,
+        password: password,
+      });
+
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("UserId", response.data.id);
+
+      router.push("/");
+
+    } catch (err) { console.log("err", err) }
   };
-  
-  
-    return (
-      <>  
+
+
+  return (
+    <>
       <Navbar />
-      <div className={styles.form}> 
-  <h3>LogIn</h3>
-  
-      <input
+      <div className={styles.pageWrapper}>
+        <div className={styles.form}>
+          <h3>Vartotojo prisijungimas</h3>
+
+          <input
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             placeholder="Email"
           />
-  
+
           <input
             type="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             placeholder="Password"
           />
-  
-  <button onClick={login} className={styles.button}>
-           LogIn
+
+          <button onClick={login} className={styles.button}>
+            Prisijungti
           </button>
         </div>
-          </>
-    )
-  }
-  
-  export default LogIn
+      </div>
+
+      <Footer />
+    </>
+  )
+}
+
+export default LogIn

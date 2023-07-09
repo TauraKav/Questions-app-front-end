@@ -1,13 +1,17 @@
-.form{
+.pageWrapper {
+    min-height: calc(100vh - 220px);
+}
+
+.form {
     display: flex;
     flex-direction: column;
-    gap:20px;
+    gap: 20px;
     align-items: center;
     justify-content: center;
 
 }
 
-.form input{
+.form input {
     width: 60%;
     padding-left: 10px;
     padding-right: 10px;
@@ -15,11 +19,17 @@
     padding-bottom: 4px;
 }
 
-.title{
+.title {
     text-align: center;
 }
 
-.button{
-    padding: 6px;
-    
+.button {
+    color: black;
+    font-size: 14px;
+    border: solid 2px black;
+    align-self: center;
+    padding: 7px;
+    border-radius: 15px;
+    background-color: rgb(226, 243, 105);
+    cursor: pointer;
 }

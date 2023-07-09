@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Navbar from "../../components/navbar/Navbar";
-// import Footer from "../../components/footer/Footer";
+import Footer from "../../components/footer/Footer";
 
 const NewQuestionPage = () => {
     const router = useRouter();
@@ -37,35 +37,36 @@ const NewQuestionPage = () => {
         } catch (err) {
             console.log(err);
         }
-
     };
 
     return (
-        <div>
+        <>
             <Navbar />
 
-            <div className={styles.questionForm}>
-                <input
-                    className={styles.titleInput}
-                    value={title}
-                    onChange={(event) => setTitle(event.target.value)}
-                    placeholder="Title"
-                />
+            <div className={styles.pageWrapper}>
+                <div className={styles.questionForm}>
+                    <input
+                        className={styles.titleInput}
+                        value={title}
+                        onChange={(event) => setTitle(event.target.value)}
+                        placeholder="Title"
+                    />
 
-                < textarea
-                    className={styles.textInput}
-                    name="text"
-                    onChange={(event) => setText(event.target.value)}
-                    placeholder="Write text here"
-                />
+                    < textarea
+                        className={styles.textInput}
+                        name="text"
+                        onChange={(event) => setText(event.target.value)}
+                        placeholder="Write text here"
+                    />
 
-                <button className={styles.addButton} onClick={addNewQuestion}>Add a new question</button>
+                    <button className={styles.addButton} onClick={addNewQuestion}>Add a new question</button>
 
-                {isSuccess && <div>Question was added successfully</div>}
+                    {isSuccess && <div>Question was added successfully</div>}
+                </div>
             </div>
 
-            {/* <Footer/> */}
-        </div>
+            <Footer />
+        </>
     );
 };
 

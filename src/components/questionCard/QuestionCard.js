@@ -38,18 +38,22 @@ const QuestionCard = ({ title, id, text }) => {
 
     return (
         <>
-            <div className={styles.questionWrapper}>
+            <div className={styles.cardWrapper} >
                 <Link className={styles.link} href={`/question/${id}`}>
-                    <div className={styles.questionTextWrapper}>
-                        <h1 className={styles.title}>{title}</h1>
-                        <div className={styles.text}>{text}</div>
+                    <div className={styles.questionWrapper}>
+
+                        <div className={styles.questionTextWrapper}>
+                            <h1 className={styles.title}>{title}</h1>
+                            <div className={styles.text}>{text}</div>
+                        </div>
+                        {isSuccess && <div className={styles.message}>Question was deleted</div>}
                     </div>
                 </Link>
                 <button className={styles.deleteButton} onClick={deleteQuestion}>
                     <img src={trash.src} className={styles.trashImg} />
                 </button>
-                {isSuccess && <div className={styles.message}>Question was deleted</div>}
             </div>
+
         </>
     );
 };

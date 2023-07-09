@@ -10,6 +10,10 @@
     padding-right: 25px;
     box-sizing: border-box;
 }
+.link {
+    text-decoration: none;
+    color: rgb(14, 15, 15);
+}
 
 .logoWrapper {
     display: flex;
