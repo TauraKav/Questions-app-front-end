@@ -15,7 +15,6 @@ const Navbar = () => {
         </Link>
 
         <ul className={styles.menu}>
-
           <li>
             <a href="/">Visi klausimai</a>
           </li>

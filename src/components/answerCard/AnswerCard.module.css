@@ -8,11 +8,13 @@
 
 .textWrapper {
     align-self: center;
+    width: 85%;
 }
 
 .buttonsWrapper {
     display: flex;
     gap: 15px;
+    width: 15%;
 }
 
 .deleteButton {
